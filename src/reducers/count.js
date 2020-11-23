@@ -2,13 +2,16 @@ import { INCREMENT, DECREMENT } from '../actions'
 
 const initialState = { value: 0 }
 
-export default (state = initialState, action) => {
+const Count = (state = initialState, action) => {
+  console.log(state)
   switch (action.type) {
     case INCREMENT:
-      return { state.value + 1 }
+      return { value: state.value + 1 }
     case DECREMENT:
-      return { state.value - 1 }
+      return { value: state.value - 1 }
     default:
       return state
   }
 }
+
+export default Count;

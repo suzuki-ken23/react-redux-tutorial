@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { connect } from 'react-redux'
 import _ from 'loadsh'
+import { Link } from 'react-router-dom'
 import { readEvents } from '../actions'
 
 class EventsIndex extends Component {
@@ -20,23 +21,22 @@ class EventsIndex extends Component {
   }
 
   render() {
-    const props = this.props
     return (
       <React.Fragment>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Body</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.renderEvents()}
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Body</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderEvents()}
+          </tbody>
+        </table>
+
+        <Link to="/events/new">New Event</Link>
       </React.Fragment>
     )
   }

@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello, World!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    const greeting = "Hi, Tom"
+    const dom = <h1 className="foo">{greeting}</h1>
+    return <input type="text" onClick={() => {console.log("I am clicked")}} />;
+  }
 }
 
 export default App;
